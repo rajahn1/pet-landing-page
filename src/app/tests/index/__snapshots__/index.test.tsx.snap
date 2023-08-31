@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders a heading 1`] = `
+<div>
+  <div
+    class="w-screen flex flex-row"
+  >
+    <h1>
+       Hello World
+    </h1>
+    <div>
+      Hello World 2
+    </div>
+    <div>
+      Hello World 3
+    </div>
+  </div>
+</div>
+`;

@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.image-doctor {
+    animation: doctor 2s ease 0s 1 normal forwards;
+}
+
+.image-pets{
+    animation: pets 2s ease 0s 1 normal forwards;
+}
+
+.middle-card {
+    animation: middle-card 3s ease 0s 1 normal forwards;
+
+}
+
+@keyframes doctor {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes pets {
+	0% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes middle-card {
+	0% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

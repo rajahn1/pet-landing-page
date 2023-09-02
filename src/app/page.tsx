@@ -1,29 +1,22 @@
-import { NameLogo } from "@/components/NameLogo";
+"use client";
 import { NavBar } from "@/components/NavBar";
 import { Social } from "@/components/Social";
-import Image from "next/image";
+import { HomeCard } from "@/components/HomeCard";
+import ModalServices from "@/components/ModalServices";
+import { useState } from "react";
 export default function Home() {
+  const [open, setOpen] = useState(false);
+  const handleOpenServicesModal = () => setOpen(true);
+  const handleCloseServicesModal = () => setOpen(false);
   return (
     <div className="w-screen h-screen flex flex-col">
-      <div className="flex w-full justify-center items-center pt-6 mt-4">
-      <Image
-      className=""
-          src={"/pet-doctor.png"}
-          width={350}
-          height={200}
-          alt="a young white pet doctor with mustache and a tattoo on the neck"
-        />
-      <NameLogo/>
-      <Image
-      src={"/three-animals-render.png"}
-      width={350}
-      height={0}
-      alt="a dog in a bath"
-      className=""
-     />
-      </div>
-      <NavBar />
-      <Social/>
+      <HomeCard />
+      <NavBar handleOpenServicesModal={handleOpenServicesModal} />
+      <Social />
+      <ModalServices
+        open={open}
+        handleCloseServicesModal={handleCloseServicesModal}
+      />
     </div>
   );
 }

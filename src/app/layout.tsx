@@ -1,16 +1,16 @@
 import "./globals.css";
-import { Pacifico, Roboto_Mono, Cinzel } from "next/font/google";
+import localFont from "next/font/local";
+import { Pacifico, Roboto_Mono } from "next/font/google";
+const visby = localFont({
+  src: "../fonts/Visby-Round-www.Dfonts.org/OTF/VisbyRoundCF-Bold.otf",
+});
 
 const pacifico = Pacifico({
   weight: ["400"],
   style: ["normal"],
   subsets: ["latin"],
+  variable: "--font-pacifico",
 });
-
-const cinzel = Cinzel({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"]
-})
 
 const robot_mono = Roboto_Mono({
   weight: ["400", "500", "600", "700"],
@@ -21,7 +21,7 @@ const robot_mono = Roboto_Mono({
 
 export const metadata = {
   title: "Banho&Tosa",
-  description: "Bernardo Ribeiro, Banho & Tosa"
+  description: "Bernardo Ribeiro, Banho & Tosa",
 };
 
 export default function RootLayout({
@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${robot_mono.variable}`}>
-      <body className={cinzel.className}>{children}</body>
+    <html lang="en" className={`${robot_mono.variable} ${pacifico.variable}`}>
+      <body className={visby.className}>{children}</body>
     </html>
   );
 }

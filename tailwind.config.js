@@ -12,9 +12,18 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        "dark-blue": "#A9DEF9",
+        "light-blue": "#D9F2FF",
+        "light-white": "#F2F2F2",
+        "light-brown": "#595067",
+        "dark-black": "#050505",
+      },
       fontFamily: {
         mono: "var(--font-roboto-mono)",
         rubik_iso: "var(--font-rubik-iso)",
+        pt_sans: "var(--font-pt-sans)",
+        sansita: "var(--font-sansita)",
       },
     },
   },

@@ -2,51 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.image-doctor {
-    animation: doctor 2s ease 0s 1 normal forwards;
+.animation-button {
+  --bg: #a9def9;
+  --hover-bg: #050505;
+  --hover-text: #d9f2ff;
+  color: #050505;
+  border: 1px solid var(--bg);
+  padding: 0.8em 2em;
+  background: var(--bg);
+  transition: 0.2s;
 }
 
-.image-pets{
-    animation: pets 2s ease 0s 1 normal forwards;
+.animation-button:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
 }
 
-.middle-card {
-    animation: middle-card 3s ease 0s 1 normal forwards;
-
-}
-
-@keyframes doctor {
-	0% {
-		opacity: 0;
-		transform: translateX(-50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-@keyframes pets {
-	0% {
-		opacity: 0;
-		transform: translateX(50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-@keyframes middle-card {
-	0% {
-		opacity: 0;
-		transform: scale(1.4);
-	}
-
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+.animation-button:active {
+  transform: translate(0);
+  box-shadow: none;
 }

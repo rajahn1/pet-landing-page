@@ -1,22 +1,24 @@
 import "./globals.css";
-import localFont from "next/font/local";
-import { Pacifico, Roboto_Mono } from "next/font/google";
-const visby = localFont({
-  src: "../fonts/Visby-Round-www.Dfonts.org/OTF/VisbyRoundCF-Bold.otf",
-});
-
-const pacifico = Pacifico({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-  variable: "--font-pacifico",
-});
+import { Roboto_Mono, Sansita, PT_Sans } from "next/font/google";
+import Header from "@/components/Header";
 
 const robot_mono = Roboto_Mono({
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-roboto-mono",
+});
+
+const sansita = Sansita({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-sansita",
+});
+
+const pt_sans = PT_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-pt-sans",
 });
 
 export const metadata = {
@@ -30,8 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${robot_mono.variable} ${pacifico.variable}`}>
-      <body className={visby.className}>{children}</body>
+    <html
+      lang="en"
+      className={`${robot_mono.variable} ${sansita.variable} ${pt_sans.variable}`}
+    >
+      <body className={sansita.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

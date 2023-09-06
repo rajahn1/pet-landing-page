@@ -1,22 +1,12 @@
 "use client";
-import { NavBar } from "@/components/NavBar";
-import { Social } from "@/components/Social";
+import Header from "@/components/Header";
 import { HomeCard } from "@/components/HomeCard";
-import ModalServices from "@/components/ModalServices";
-import { useState } from "react";
+import { Social } from "@/components/Social";
 export default function Home() {
-  const [open, setOpen] = useState(false);
-  const handleOpenServicesModal = () => setOpen(true);
-  const handleCloseServicesModal = () => setOpen(false);
   return (
-    <div className="w-screen h-screen flex flex-col">
+    <div className="flex flex-col px-24">
       <HomeCard />
-      <NavBar handleOpenServicesModal={handleOpenServicesModal} />
       <Social />
-      <ModalServices
-        open={open}
-        handleCloseServicesModal={handleCloseServicesModal}
-      />
     </div>
   );
 }

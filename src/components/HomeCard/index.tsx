@@ -1,15 +1,14 @@
 import Image from "next/image";
 import { NameLogo } from "../NameLogo";
 export const HomeCard = () => (
-  <div className="flex justify-between items-center">
+  <div className="flex justify-between px-24 py-12">
     <NameLogo />
-    <div className="bg-dark-blue">
-      <Image
-        src={"/cute-dog crop.png"}
-        width={350}
-        height={50}
-        alt="a cute black and white dog "
-      />
-    </div>
+    <Image
+      src={"/cute-dog-with-blue-bg.svg"}
+      width={450}
+      height={600}
+      alt="a cute black and white dog "
+      className="border-red-500"
+    />
   </div>
 );
